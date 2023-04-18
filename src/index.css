@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.search-btn{
+  display: flex;
+  background-color: #1B998B;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 6.8px 12px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.search-btn:hover{
+  display: flex;
+  background-color: #15796d;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 6.8px 12px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  cursor: pointer;
+}
