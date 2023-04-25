@@ -7,15 +7,22 @@ function MainPageComponent() {
   let pokemonData = '';
   const [ pokemon, setPokemon ] = useState('');
   const [ searchTerm, setSearchTerm ] = useState('');
+  const [ monName, setMonName ] = useState('');
+
+  const handleSearch = (e) => setSearchTerm(e.target.value);
 
   async function FetchMon () {
     const promise = await fetch('https://pokeapi.co/api/v2/pokemon/quilava/');
     const data = await promise.json();
     console.log(data);
-  
+    pokemonData = data;
+
+    setPokemon(data);
+    console.log(data.types[0].type.name);
+    // console.log(pokemon);
   }
 
-  FetchMon();
+  // FetchMon();
   
     return (
       <div>
@@ -27,14 +34,18 @@ function MainPageComponent() {
               </Row>
               <Row className="search-row">
                   <Col xs={4} className="search-bar">
-                    <Form.Control type="text" placeholder="Enter Pokémon Name Here" />
+                    <Form.Control type="text" placeholder="Enter Pokémon Name Here" 
+                    // onChange={({target: {value}}) => setSearchTerm(value)}
+                    />
                   </Col>
                   <Col xs={2} className="search-btn-col">
-                    <div className="search-btn">Search for Pokémon</div>
+                    <div 
+                    onClick={FetchMon}
+                    className="search-btn">Search for Pokémon</div>
                   </Col>
               </Row>
           </Container>
-          <Container>
+          <Container fluid>
             <Row>
               <Col>
                 number here
@@ -45,23 +56,15 @@ function MainPageComponent() {
                 Name:
               </Col>
               <Col>
-                name here
+                {pokemon.name}
               </Col>
             </Row>
             <Row>
               <Col>
-                Types:
+                Type(s):
               </Col>
               <Col>
-                types here
-              </Col>
-            </Row>
-            <Row>
-              <Col>
-                Types:
-              </Col>
-              <Col>
-                types here
+                {/* {pokemon.types[0].type.name} */}
               </Col>
             </Row>
           </Container>
