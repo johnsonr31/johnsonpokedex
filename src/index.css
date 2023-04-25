@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+.page-title{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
 .search-btn{
   display: flex;
   background-color: #1B998B;
@@ -22,6 +28,7 @@ code {
   text-align: center;
   text-decoration: none;
   justify-content: center;
+  width: 25em;
 }
 
 .search-btn:hover{
@@ -35,4 +42,19 @@ code {
   text-decoration: none;
   justify-content: center;
   cursor: pointer;
+}
+
+.search-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-bar{
+  display: flex;
+}
+
+.search-btn-col{
+  display: flex;
+  justify-content: center;
 }
