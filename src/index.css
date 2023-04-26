@@ -12,36 +12,17 @@ code {
     monospace;
 }
 
+/* Non-default CSS below here */
+
+@font-face {
+  font-family: Handlee-Regular;
+  src: url(./Assets/Fonts/Handlee-Regular.ttf);
+}
+
 .page-title{
   display: flex;
   text-align: center;
   justify-content: center;
-}
-
-.search-btn{
-  display: flex;
-  background-color: #188679;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 0.5em;
-  padding: 6.8px 12px;
-  text-align: center;
-  text-decoration: none;
-  justify-content: center;
-  width: 25em;
-}
-
-.search-btn:hover{
-  display: flex;
-  background-color: #1ea293;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 0.5em;
-  padding: 6.8px 12px;
-  text-align: center;
-  text-decoration: none;
-  justify-content: center;
-  cursor: pointer;
 }
 
 .search-row{
@@ -74,4 +55,64 @@ code {
   display: flex;
   justify-content: center;
   padding: 1em;
+}
+
+.info-column{
+  font-family: Handlee-Regular;
+}
+
+/* Button Styles */
+
+.search-btn{
+  display: flex;
+  background-color: #188679;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 6.8px 12px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  width: 25em;
+  font-family: Handlee-Regular;
+}
+
+.search-btn:hover{
+  display: flex;
+  background-color: #1ea293;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 6.8px 12px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.random-btn{
+  display: flex;
+  background-color: #238618;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 6.8px 12px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  width: 25em;
+  font-family: Handlee-Regular;
+}
+
+.random-btn:hover{
+  display: flex;
+  background-color: #45c337;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 6.8px 12px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  cursor: pointer;
 }
