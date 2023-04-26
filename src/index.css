@@ -20,7 +20,7 @@ code {
 
 .search-btn{
   display: flex;
-  background-color: #1B998B;
+  background-color: #188679;
   color: #FFFFFF;
   border: none;
   border-radius: 0.5em;
@@ -33,7 +33,7 @@ code {
 
 .search-btn:hover{
   display: flex;
-  background-color: #15796d;
+  background-color: #1ea293;
   color: #FFFFFF;
   border: none;
   border-radius: 0.5em;
@@ -57,4 +57,21 @@ code {
 .search-btn-col{
   display: flex;
   justify-content: center;
+}
+
+.image-column{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.header-image{
+  display: flex;
+  height: 15em;
+}
+
+.header-image-column{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
 }

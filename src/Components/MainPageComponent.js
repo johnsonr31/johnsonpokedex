@@ -33,8 +33,9 @@ function MainPageComponent() {
       <div>
           <Container fluid>
               <Row>
-                  <Col>
-                    <h1 className="page-title">Pokémon App</h1>
+                  <Col className="header-image-column">
+                    {/* <h1 className="page-title">Richard's Pokédex</h1> */}
+                    <img className="header-image" src={require('../Assets/pokemonPageImage.png')}/>
                   </Col>
               </Row>
               <Row className="search-row">
@@ -50,9 +51,9 @@ function MainPageComponent() {
                   </Col>
               </Row>
           </Container>
-          <Container fluid>
+          <Container fluid className="info-container">
             <Row>
-              <Col>
+              <Col className="info-column">
                 <Row>
                   <Col>
                     #{pokemon ? pokemon.id : '000'}
@@ -75,7 +76,7 @@ function MainPageComponent() {
                   </Col>
                 </Row>
               </Col>
-              <Col>
+              <Col xs={5} className="image-column">
                 <img src={(pokemon ? pokemon.sprites.front_default : null)} />
               </Col>
             </Row>
