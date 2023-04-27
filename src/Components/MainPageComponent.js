@@ -112,9 +112,18 @@ function MainPageComponent() {
                     {pokemon ? pokemon.types[0].type.name : null}
                   </Col>
                 </Row>
+                <Row>
+                  <Col xs={1}>
+                    Height:
+                  </Col>
+                  <Col>
+                    {pokemon ? Math.floor(pokemon.height * 10) : '000'} cm
+                  </Col>
+                </Row>
               </Col>
               <Col xs={5} className="image-column">
                 <img src={(pokemon ? pokemon.sprites.front_default : null)} />
+                <img src={(pokemon ? pokemon.sprites.front_shiny : null)} />
               </Col>
             </Row>
           </Container>
