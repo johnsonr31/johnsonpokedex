@@ -51,6 +51,8 @@ function MainPageComponent() {
     pokemonData = data;
 
     setPokemon(data);
+    let firstLetter = data.name.charAt(0);
+    console.log(firstLetter);
     // console.log(data.types[0].type.name);
     // let typesArray = data.types;
     // let types = [];
@@ -101,7 +103,7 @@ function MainPageComponent() {
                     Name:
                   </Col>
                   <Col>
-                    {pokemon ? pokemon.name : null}
+                    {pokemon ? pokemon.name : '---'}
                   </Col>
                 </Row>
                 <Row>
@@ -109,7 +111,7 @@ function MainPageComponent() {
                     Type(s):
                   </Col>
                   <Col>
-                    {pokemon ? pokemon.types[0].type.name : null}
+                    {pokemon ? pokemon.types[0].type.name : '---'}
                   </Col>
                 </Row>
                 <Row>
@@ -118,6 +120,14 @@ function MainPageComponent() {
                   </Col>
                   <Col>
                     {pokemon ? Math.floor(pokemon.height * 10) : '000'} cm
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={1}>
+                    Weight:
+                  </Col>
+                  <Col>
+                    {pokemon ? pokemon.weight / 10 : '000'} kg
                   </Col>
                 </Row>
               </Col>
