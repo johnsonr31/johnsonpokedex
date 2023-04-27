@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to top, #B7C3F3, #C4CDF3);
 }
 
 code {
@@ -44,6 +45,8 @@ code {
   display: flex;
   justify-content: left;
   align-items: center;
+  /* background-color: rgba(24, 134, 121, 50%);
+  border-radius: 1em; */
 }
 
 .header-image{
@@ -59,6 +62,13 @@ code {
 
 .info-column{
   font-family: Handlee-Regular;
+  /* background-color: rgba(24, 134, 121, 50%);
+  border-radius: 1em; */
+}
+
+
+.info-container{
+  height: 30em;
 }
 
 /* Button Styles */

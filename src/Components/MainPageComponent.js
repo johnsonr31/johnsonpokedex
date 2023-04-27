@@ -95,7 +95,7 @@ function MainPageComponent() {
               <Col className="info-column">
                 <Row>
                   <Col>
-                    #{pokemon ? pokemon.id : '000'}
+                    #{pokemon ? pokemon.id : '---'}
                   </Col>
                 </Row>
                 <Row>
@@ -103,7 +103,7 @@ function MainPageComponent() {
                     Name:
                   </Col>
                   <Col>
-                    {pokemon ? pokemon.name : '---'}
+                    {pokemon ? pokemon.name : '-----'}
                   </Col>
                 </Row>
                 <Row>
@@ -111,7 +111,7 @@ function MainPageComponent() {
                     Type(s):
                   </Col>
                   <Col>
-                    {pokemon ? pokemon.types[0].type.name : '---'}
+                    {pokemon ? pokemon.types[0].type.name : '-----'}
                   </Col>
                 </Row>
                 <Row>
@@ -119,7 +119,8 @@ function MainPageComponent() {
                     Height:
                   </Col>
                   <Col>
-                    {pokemon ? Math.floor(pokemon.height * 10) : '000'} cm
+                  {/* Height value from the API is stored in decimeters:  Multiplied it by 10 for Centimeters, and used Math.floor to round it down */}
+                    {pokemon ? Math.floor(pokemon.height * 10) : '---'} cm
                   </Col>
                 </Row>
                 <Row>
@@ -127,7 +128,7 @@ function MainPageComponent() {
                     Weight:
                   </Col>
                   <Col>
-                    {pokemon ? pokemon.weight / 10 : '000'} kg
+                    {pokemon ? pokemon.weight / 10 : '---'} kg
                   </Col>
                 </Row>
               </Col>
