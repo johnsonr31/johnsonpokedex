@@ -6,6 +6,7 @@ function MainPageComponent() {
 
   let pokemonData = '';
   let randomNumber = 0;
+  // let showShiny = false;
   // const blankIconUrl = '../Assets/Images/blankPokemon.png';
 
   const [ pokemon, setPokemon ] = useState('');
@@ -61,14 +62,17 @@ function MainPageComponent() {
   // FetchMon();
   
     return (
-      <div>
-          <Container fluid>
+      <>
+          <Container fluid className="header-container">
               <Row>
                   <Col className="header-image-column">
                     {/* <h1 className="page-title">Richard's Pokédex</h1> */}
                     <img className="header-image" src={require('../Assets/Images/pokemonPageImage.png')}/>
                   </Col>
               </Row>
+          </Container>
+          <br />
+            <Container fluid>
               <Row className="search-row">
                   <Col xs={4} className="search-bar">
                     <Form.Control type="text" placeholder="Enter Pokémon Name Here" 
@@ -90,16 +94,17 @@ function MainPageComponent() {
                   </Col>
               </Row>
           </Container>
+          <br />
           <Container fluid className="info-container">
-            <Row>
-              <Col className="info-column">
+            <Row className="info-row">
+              <Col xs={5} className="info-column">
                 <Row>
                   <Col>
                     #{pokemon ? pokemon.id : '---'}
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={1}>
+                  <Col xs={2}>
                     Name:
                   </Col>
                   <Col>
@@ -107,7 +112,7 @@ function MainPageComponent() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={1}>
+                  <Col xs={2}>
                     Type(s):
                   </Col>
                   <Col>
@@ -115,7 +120,7 @@ function MainPageComponent() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={1}>
+                  <Col xs={2}>
                     Height:
                   </Col>
                   <Col>
@@ -124,7 +129,7 @@ function MainPageComponent() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col xs={1}>
+                  <Col xs={2}>
                     Weight:
                   </Col>
                   <Col>
@@ -132,13 +137,13 @@ function MainPageComponent() {
                   </Col>
                 </Row>
               </Col>
-              <Col xs={5} className="image-column">
+              <Col xs={2} className="image-column">
                 <img src={(pokemon ? pokemon.sprites.front_default : null)} />
                 <img src={(pokemon ? pokemon.sprites.front_shiny : null)} />
               </Col>
             </Row>
           </Container>
-      </div>
+      </>
     )
 }
 

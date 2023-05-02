@@ -6,13 +6,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 function App() {
   return (
     <>
-      <Container fluid>
-        <Row>
-          <Col>
-            <MainPageComponent />
-          </Col>
-        </Row>
-      </Container>
+      <MainPageComponent />
     </>
   );
 }

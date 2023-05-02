@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to top, #B7C3F3, #C4CDF3);
+  background-image: linear-gradient(to top, #9ad6fc, #2b7213);
 }
 
 code {
@@ -43,15 +43,16 @@ code {
 
 .image-column{
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  /* background-color: rgba(24, 134, 121, 50%);
-  border-radius: 1em; */
+  background-color: rgba(255, 255, 255, 30%);
+  border-radius: 1em;
 }
 
 .header-image{
   display: flex;
   height: 15em;
+  /* box-shadow: 0px 0px 0px #140145; */
 }
 
 .header-image-column{
@@ -62,8 +63,9 @@ code {
 
 .info-column{
   font-family: Handlee-Regular;
-  /* background-color: rgba(24, 134, 121, 50%);
-  border-radius: 1em; */
+  font-size: 1.1em;
+  /* background-color: rgba(24, 134, 121, 50%); */
+  /* border-radius: 1em; */
 }
 
 
@@ -71,11 +73,30 @@ code {
   height: 30em;
 }
 
-/* Button Styles */
+/* .toggle-switch{
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+} */
+
+.header-container{
+  background-image: url(./Assets/Images/marc-pell-oWRVjFQIwAY-unsplash.jpg);
+  background-size: cover;
+  background-position: center 40%;
+  /* height: 20em; */
+}
+
+.info-row{
+  display: flex;
+  justify-content: center;
+}
+
+/* * * * * * * * * * * * Button Styles * * * * * * * * * * * */
 
 .search-btn{
   display: flex;
-  background-color: #188679;
+  background-color: #118376;
   color: #FFFFFF;
   border: none;
   border-radius: 0.5em;
@@ -89,7 +110,7 @@ code {
 
 .search-btn:hover{
   display: flex;
-  background-color: #1ea293;
+  background-color: #0c685d;
   color: #FFFFFF;
   border: none;
   border-radius: 0.5em;
@@ -102,7 +123,7 @@ code {
 
 .random-btn{
   display: flex;
-  background-color: #238618;
+  background-color: #258c1a;
   color: #FFFFFF;
   border: none;
   border-radius: 0.5em;
@@ -116,7 +137,7 @@ code {
 
 .random-btn:hover{
   display: flex;
-  background-color: #36a32a;
+  background-color: #1b7211;
   color: #FFFFFF;
   border: none;
   border-radius: 0.5em;
@@ -126,3 +147,30 @@ code {
   justify-content: center;
   cursor: pointer;
 }
+
+/* .shiny-btn{
+  display: flex;
+  background-color: #238618;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 6.8px 12px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  width: 25em;
+  font-family: Handlee-Regular;
+}
+
+.shiny-btn:hover{
+  display: flex;
+  background-color: #36a32a;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5em;
+  padding: 6.8px 12px;
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  cursor: pointer;
+} */
