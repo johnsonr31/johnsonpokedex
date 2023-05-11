@@ -20,28 +20,28 @@ code {
   src: url(./Assets/Fonts/Handlee-Regular.ttf);
 }
 
-.page-title{
+.page-title {
   display: flex;
   text-align: center;
   justify-content: center;
 }
 
-.search-row{
+.search-row {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.search-bar{
+.search-bar {
   display: flex;
 }
 
-.search-btn-col{
+.search-btn-col {
   display: flex;
   justify-content: center;
 }
 
-.image-column{
+.image-column {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,19 +49,25 @@ code {
   border-radius: 1em;
 }
 
-.header-image{
-  display: flex;
+.header-image {
+  /* display: flex; */
   height: 15em;
-  /* box-shadow: 0px 0px 0px #140145; */
+  /* border-radius: 50em;
+  box-shadow: 10px 5px 5px #000000; */
+  margin: auto;
 }
 
-.header-image-column{
+.header-image-column {
   display: flex;
   justify-content: center;
   padding: 1em;
 }
 
-.info-column{
+.align-center {
+  align-items: center;
+}
+
+.info-column {
   font-family: Handlee-Regular;
   font-size: 1.1em;
   /* background-color: rgba(24, 134, 121, 50%); */
@@ -69,8 +75,8 @@ code {
 }
 
 
-.info-container{
-  height: 30em;
+.info-container {
+  height: 23em;
 }
 
 /* .toggle-switch{
@@ -80,21 +86,26 @@ code {
   height: 34px;
 } */
 
-.header-container{
+.header-container {
   background-image: url(./Assets/Images/marc-pell-oWRVjFQIwAY-unsplash.jpg);
   background-size: cover;
   background-position: center 40%;
-  /* height: 20em; */
+  height: 20em;
+  align-items: center;
 }
 
-.info-row{
+.info-row {
   display: flex;
   justify-content: center;
 }
 
+.pokemon-search {
+  font-family: Handlee-Regular;
+}
+
 /* * * * * * * * * * * * Button Styles * * * * * * * * * * * */
 
-.search-btn{
+.search-btn {
   display: flex;
   background-color: #118376;
   color: #FFFFFF;
@@ -104,11 +115,10 @@ code {
   text-align: center;
   text-decoration: none;
   justify-content: center;
-  width: 25em;
   font-family: Handlee-Regular;
 }
 
-.search-btn:hover{
+.search-btn:hover {
   display: flex;
   background-color: #0c685d;
   color: #FFFFFF;
@@ -121,7 +131,7 @@ code {
   cursor: pointer;
 }
 
-.random-btn{
+.random-btn {
   display: flex;
   background-color: #258c1a;
   color: #FFFFFF;
@@ -135,7 +145,7 @@ code {
   font-family: Handlee-Regular;
 }
 
-.random-btn:hover{
+.random-btn:hover {
   display: flex;
   background-color: #1b7211;
   color: #FFFFFF;
@@ -174,3 +184,67 @@ code {
   justify-content: center;
   cursor: pointer;
 } */
+
+/* * * * * * * * * * * * * * Media Queries * * * * * * * * * * * */
+
+@media (max-width: 768px) {
+  .search-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-btn {
+    display: flex;
+    background-color: #118376;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.5em;
+    padding: 6.8px 12px;
+    text-align: left;
+    text-decoration: none;
+    justify-content: center;
+    font-family: Handlee-Regular;
+  }
+  
+  .search-btn:hover {
+    display: flex;
+    background-color: #0c685d;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.5em;
+    padding: 6.8px 12px;
+    text-align: left;
+    text-decoration: none;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .random-btn {
+    display: flex;
+    background-color: #258c1a;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.5em;
+    padding: 6.8px 12px;
+    text-align: left;
+    text-decoration: none;
+    justify-content: center;
+    width: 25em;
+    font-family: Handlee-Regular;
+  }
+  
+  .random-btn:hover {
+    display: flex;
+    background-color: #1b7211;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.5em;
+    padding: 6.8px 12px;
+    text-align: left;
+    text-decoration: none;
+    justify-content: center;
+    cursor: pointer;
+  }
+}

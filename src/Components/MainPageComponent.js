@@ -13,24 +13,30 @@ function MainPageComponent() {
   // const [ types, setTypes ] = useState([]);
   const [ searchTerm, setSearchTerm ] = useState('');
   const [ monName, setMonName ] = useState('');
-  const [ pokemonTypes, setPokemonTypes ] = useState([]);
+  const [ pokemonTypes, setPokemonTypes ] = useState('');
 
-  const handleSearch = () => {
+  const handleInput = (e) => {
+      setSearchTerm(e.target.value);
+    }
+  
+    const handleSearch = () => {
     setMonName(searchTerm);
-    console.log(monName);
+    FetchMon();
   }
 
+
+
   async function FetchMon () {
-    const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/quilava/`);
+    const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${monName}/`);
     const data = await promise.json();
     console.log(data);
     pokemonData = data;
 
     setPokemon(data);
     console.log(data.types[0].type.name);
-    let typesArray = data.types;
+    // let typesArray = (data.types).length;
     let types = [];
-
+    // console.log(typesArray);
     // for(let i = 0; i < typesArray.length; i++)
     // {
     //   types = typesArray.push(data.types[i].type.name);
@@ -48,12 +54,23 @@ function MainPageComponent() {
 
 
     const data = await promise.json();
-    console.log(data);
+    // console.log(data);
     pokemonData = data;
 
     setPokemon(data);
     let firstLetter = data.name.charAt(0);
-    console.log(firstLetter);
+    // console.log(firstLetter);
+
+    let typesArray = [];
+    // console.log(typesArray);
+
+    for(let i = 0; i < (data.types).length; i++)
+    {
+      typesArray.push(data.types[i].type.name);
+    }
+    // console.log(typesArray);
+    setPokemonTypes(typesArray.toString(''));
+    // console.log(pokemonTypes);
     // console.log(data.types[0].type.name);
     // let typesArray = data.types;
     // let types = [];
@@ -64,10 +81,10 @@ function MainPageComponent() {
     return (
       <>
           <Container fluid className="header-container">
-              <Row>
+              <Row className="align-center">
                   <Col className="header-image-column">
                     {/* <h1 className="page-title">Richard's Pokédex</h1> */}
-                    <img className="header-image" src={require('../Assets/Images/pokemonPageImage.png')}/>
+                    <img className="header-image" src={require('../Assets/Images/pokemonPageImageSmall.png')}/>
                   </Col>
               </Row>
           </Container>
@@ -75,13 +92,13 @@ function MainPageComponent() {
             <Container fluid>
               <Row className="search-row">
                   <Col xs={4} className="search-bar">
-                    <Form.Control type="text" placeholder="Enter Pokémon Name Here" 
-                    onChange={({target: {value}}) => setSearchTerm(value)}
+                    <Form.Control className="pokemon-search" type="text" placeholder="Enter Pokémon Name Here" 
+                    onChange={handleInput}
                     />
                   </Col>
                   <Col xs={2} className="search-btn-col">
                     <button 
-                    onClick={FetchMon}
+                    onClick={handleSearch}
                     className="search-btn">Search for Pokémon</button>
                   </Col>
                   <Col xs={2} className="search-btn-col">
@@ -116,7 +133,7 @@ function MainPageComponent() {
                     Type(s):
                   </Col>
                   <Col>
-                    {pokemon ? pokemon.types[0].type.name : '-----'}
+                    {pokemon ? pokemonTypes : '-----'}
                   </Col>
                 </Row>
                 <Row>
