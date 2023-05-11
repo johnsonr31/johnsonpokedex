@@ -17,34 +17,32 @@ function MainPageComponent() {
 
   const handleInput = (e) => {
       setSearchTerm(e.target.value);
+      
     }
   
     const handleSearch = () => {
-    setMonName(searchTerm);
+    // setMonName(searchTerm);
     FetchMon();
   }
 
 
 
   async function FetchMon () {
-    const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${monName}/`);
+    const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm}/`);
     const data = await promise.json();
     console.log(data);
     pokemonData = data;
 
     setPokemon(data);
     console.log(data.types[0].type.name);
-    // let typesArray = (data.types).length;
-    let types = [];
-    // console.log(typesArray);
-    // for(let i = 0; i < typesArray.length; i++)
-    // {
-    //   types = typesArray.push(data.types[i].type.name);
-    // }
-    // setPokemonTypes(types);
-    // console.log(types + 'hlol');
-    // setTypes(data.types);
-    // console.log(pokemon);
+
+    let typesArray = [];
+
+    for(let i = 0; i < (data.types).length; i++)
+    {
+      typesArray.push(data.types[i].type.name);
+    }
+    setPokemonTypes(typesArray.toString(''));
   }
   
   async function FetchRandomMon () {
@@ -58,7 +56,6 @@ function MainPageComponent() {
     pokemonData = data;
 
     setPokemon(data);
-    let firstLetter = data.name.charAt(0);
     // console.log(firstLetter);
 
     let typesArray = [];
