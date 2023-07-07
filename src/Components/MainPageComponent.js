@@ -6,11 +6,8 @@ function MainPageComponent() {
 
   let pokemonData = '';
   let randomNumber = 0;
-  // let showShiny = false;
-  // const blankIconUrl = '../Assets/Images/blankPokemon.png';
 
   const [ pokemon, setPokemon ] = useState('');
-  // const [ types, setTypes ] = useState([]);
   const [ searchTerm, setSearchTerm ] = useState('');
   const [ monName, setMonName ] = useState('');
   const [ pokemonTypes, setPokemonTypes ] = useState('');
@@ -21,7 +18,6 @@ function MainPageComponent() {
     }
   
     const handleSearch = () => {
-    // setMonName(searchTerm);
     FetchMon();
   }
 
@@ -30,11 +26,9 @@ function MainPageComponent() {
   async function FetchMon () {
     const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm}/`);
     const data = await promise.json();
-    console.log(data);
     pokemonData = data;
 
     setPokemon(data);
-    console.log(data.types[0].type.name);
 
     let typesArray = [];
 
@@ -52,35 +46,25 @@ function MainPageComponent() {
 
 
     const data = await promise.json();
-    // console.log(data);
     pokemonData = data;
 
     setPokemon(data);
-    // console.log(firstLetter);
 
     let typesArray = [];
-    // console.log(typesArray);
 
     for(let i = 0; i < (data.types).length; i++)
     {
       typesArray.push(data.types[i].type.name);
     }
-    // console.log(typesArray);
     setPokemonTypes(typesArray.toString(''));
-    // console.log(pokemonTypes);
-    // console.log(data.types[0].type.name);
-    // let typesArray = data.types;
-    // let types = [];
   }
   
-  // FetchMon();
   
     return (
       <>
           <Container fluid className="header-container">
               <Row className="align-center">
                   <Col className="header-image-column">
-                    {/* <h1 className="page-title">Richard's Pokédex</h1> */}
                     <img className="header-image" src={require('../Assets/Images/pokemonPageImageSmall.png')}/>
                   </Col>
               </Row>
@@ -138,7 +122,6 @@ function MainPageComponent() {
                     Height:
                   </Col>
                   <Col>
-                  {/* Height value from the API is stored in decimeters:  Multiplied it by 10 for Centimeters, and used Math.floor to round it down */}
                     {pokemon ? Math.floor(pokemon.height * 10) : '---'} cm
                   </Col>
                 </Row>
