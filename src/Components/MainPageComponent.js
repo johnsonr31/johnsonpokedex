@@ -24,7 +24,7 @@ function MainPageComponent() {
 
 
   async function FetchMon () {
-    const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm}/`);
+    const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchTerm.toLowerCase()}/`);
     const data = await promise.json();
     pokemonData = data;
 
