@@ -40,7 +40,7 @@ function MainPageComponent() {
   }
   
   async function FetchRandomMon () {
-    randomNumber = Math.floor(Math.random() * 646);
+    randomNumber = Math.floor(Math.random() * 1009);
 
     const promise = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNumber}/`);
 
@@ -119,7 +119,7 @@ function MainPageComponent() {
                 </Row>
                 <Row>
                   <Col xs={2}>
-                    Height:
+                    Size:
                   </Col>
                   <Col>
                     {pokemon ? Math.floor(pokemon.height * 10) : '---'} cm
